@@ -42,8 +42,8 @@ en:
         A secret access key is required via "secret_access_key"
 
     errors:
-      fog_error: |-
-        There was an error talking to AWS. The error message is shown
+      docker_error: |-
+        There was an error talking to Docker. The error message is shown
         below:
 
         %{message}

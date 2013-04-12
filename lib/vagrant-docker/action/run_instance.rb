@@ -81,13 +81,13 @@ module VagrantPlugins
             # Invalid subnet doesn't have its own error so we catch and
             # check the error message here.
             if e.message =~ /subnet ID/
-              raise Errors::FogError,
+              raise Errors::DockerError,
                 :message => "Subnet ID not found: #{subnet_id}"
             end
 
             raise
           rescue Fog::Compute::AWS::Error => e
-            raise Errors::FogError, :message => e.message
+            raise Errors::DockerError, :message => e.message
           end
 
           # Immediately save the ID since it is created at this point.

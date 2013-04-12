@@ -7,8 +7,8 @@ module VagrantPlugins
         error_namespace("vagrant_aws.errors")
       end
 
-      class FogError < VagrantAWSError
-        error_key(:fog_error)
+      class DockerError < VagrantAWSError
+        error_key(:docker_error)
       end
 
       class RsyncError < VagrantAWSError
