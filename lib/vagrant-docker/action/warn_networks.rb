@@ -1,13 +1,16 @@
 module VagrantPlugins
-  module AWS
+  module Docker
     module Action
-      class MessageAlreadyCreated
+      class WarnNetworks
         def initialize(app, env)
           @app = app
         end
 
         def call(env)
-          env[:ui].info(I18n.t("vagrant_aws.already_created"))
+          if env[:machine].config.vm.networks.length > 0
+            env[:ui].warn(I18n.t("vagrant_aws.warn_networks"))
+          end
+
           @app.call(env)
         end
       end

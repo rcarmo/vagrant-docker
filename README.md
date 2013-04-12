@@ -22,7 +22,7 @@ installing, `vagrant up` and specify the `aws` provider. An example is
 shown below.
 
 ```
-$ vagrant plugin install vagrant-aws
+$ vagrant plugin install vagrant-docker
 ...
 $ vagrant up --provider=aws
 ...
@@ -39,7 +39,7 @@ manually within a `config.vm.provider` block. So first, add the dummy
 box using any name you want:
 
 ```
-$ vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box
+$ vagrant box add dummy https://github.com/destructuring/vagrant-docker/raw/master/dummy.box
 ...
 ```
 
@@ -79,7 +79,7 @@ are being launched with a security group that allows SSH access.
 
 Every provider in Vagrant must introduce a custom box format. This
 provider introduces `aws` boxes. You can view an example box in
-the [example_box/ directory](https://github.com/mitchellh/vagrant-aws/tree/master/example_box).
+the [example_box/ directory](https://github.com/destructuring/vagrant-docker/tree/master/example_box).
 That directory also contains instructions on how to build a box.
 
 The box format is basically just the required `metadata.json` file
@@ -157,7 +157,7 @@ the top-level configurations, as you would probably expect.
 ## Networks
 
 Networking features in the form of `config.vm.network` are not
-supported with `vagrant-aws`, currently. If any of these are
+supported with `vagrant-docker`, currently. If any of these are
 specified, Vagrant will emit a warning, but will otherwise boot
 the AWS machine.
 
@@ -173,7 +173,7 @@ chef, and puppet) to work!
 
 ## Development
 
-To work on the `vagrant-aws` plugin, clone this repository out, and use
+To work on the `vagrant-docker` plugin, clone this repository out, and use
 [Bundler](http://gembundler.com) to get the dependencies:
 
 ```

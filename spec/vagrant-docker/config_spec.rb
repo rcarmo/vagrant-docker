@@ -1,6 +1,6 @@
-require "vagrant-aws/config"
+require "vagrant-docker/config"
 
-describe VagrantPlugins::AWS::Config do
+describe VagrantPlugins::Docker::Config do
   let(:instance) { described_class.new }
 
   # Ensure tests are not affected by AWS credential environment variables

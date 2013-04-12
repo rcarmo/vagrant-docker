@@ -11,7 +11,7 @@ if Vagrant::VERSION < "1.1.0"
 end
 
 module VagrantPlugins
-  module AWS
+  module Docker
     class Plugin < Vagrant.plugin("2")
       name "AWS"
       description <<-DESC

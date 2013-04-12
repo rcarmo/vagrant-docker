@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module AWS
+  module Docker
     module Action
       class MessageNotCreated
         def initialize(app, env)

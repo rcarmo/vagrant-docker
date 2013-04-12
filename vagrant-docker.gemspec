@@ -1,20 +1,18 @@
 $:.unshift File.expand_path("../lib", __FILE__)
-require "vagrant-aws/version"
+require "vagrant-docker/version"
 
 Gem::Specification.new do |s|
-  s.name          = "vagrant-aws"
-  s.version       = VagrantPlugins::AWS::VERSION
+  s.name          = "vagrant-docker"
+  s.version       = VagrantPlugins::Docker::VERSION
   s.platform      = Gem::Platform::RUBY
   s.authors       = "Mitchell Hashimoto"
   s.email         = "mitchell@hashicorp.com"
   s.homepage      = "http://www.vagrantup.com"
-  s.summary       = "Enables Vagrant to manage machines in EC2 and VPC."
-  s.description   = "Enables Vagrant to manage machines in EC2 and VPC."
+  s.summary       = "Enables Vagrant to manage containers in Docker."
+  s.description   = "Enables Vagrant to manage containers in Docker."
 
   s.required_rubygems_version = ">= 1.3.6"
-  s.rubyforge_project         = "vagrant-aws"
-
-  s.add_runtime_dependency "fog", "~> 1.10.0"
+  s.rubyforge_project         = "vagrant-docker"
 
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec-core", "~> 2.12.2"
