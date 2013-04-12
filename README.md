@@ -1,40 +1,39 @@
 # Vagrant AWS Provider
 
-This is a [Vagrant](http://www.vagrantup.com) 1.1+ plugin that adds an [AWS](http://aws.amazon.com)
-provider to Vagrant, allowing Vagrant to control and provision machines in
-EC2 and VPC.
+This is a [Vagrant](http://www.vagrantup.com) 1.1+ plugin that adds an [Docker](http://docker.io)
+provider to Vagrant, allowing Vagrant to control and provision
+containers in Docker.
 
 **NOTE:** This plugin requires Vagrant 1.1+,
 
 ## Features
 
-* Boot EC2 or VPC instances.
-* SSH into the instances.
-* Provision the instances with any built-in Vagrant provisioner.
+* Boot Docker containers.
+* SSH into the containers.
+* Provision the containers with any built-in Vagrant provisioner.
 * Minimal synced folder support via `rsync`.
-* Define region-specifc configurations so Vagrant can manage machines
-  in multiple regions.
 
 ## Usage
 
-Install using standard Vagrant 1.1+ plugin installation methods. After
-installing, `vagrant up` and specify the `aws` provider. An example is
+Install using Bundler. 
+
+After installing, `vagrant up` and specify the `docker` provider. An example is
 shown below.
 
 ```
 $ vagrant plugin install vagrant-docker
 ...
-$ vagrant up --provider=aws
+$ vagrant up --provider=docker
 ...
 ```
 
-Of course prior to doing this, you'll need to obtain an AWS-compatible
+Of course prior to doing this, you'll need to obtain an Docker-compatible
 box file for Vagrant.
 
 ## Quick Start
 
 After installing the plugin (instructions above), the quickest way to get
-started is to actually use a dummy AWS box and specify all the details
+started is to actually use a dummy Docker box and specify all the details
 manually within a `config.vm.provider` block. So first, add the dummy
 box using any name you want:
 
@@ -50,19 +49,12 @@ your information where necessary.
 Vagrant.configure("2") do |config|
   config.vm.box = "dummy"
 
-  config.vm.provider :aws do |aws|
-    aws.access_key_id = "YOUR KEY"
-    aws.secret_access_key = "YOUR SECRET KEY"
-    aws.keypair_name = "KEYPAIR NAME"
-    aws.ssh_private_key_path = "PATH TO YOUR PRIVATE KEY"
-
-    aws.ami = "ami-7747d01e"
-    aws.ssh_username = "ubuntu"
+  config.vm.provider :docker do |docker|
   end
 end
 ```
 
-And then run `vagrant up --provider=aws`.
+And then run `vagrant up --provider=docker`.
 
 This will start an Ubuntu 12.04 instance in the us-east-1 region within
 your account. And assuming your SSH information was filled in properly
