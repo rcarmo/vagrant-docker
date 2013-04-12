@@ -1,5 +1,5 @@
 ---
 remotes:
-  vendor: https://mitchellh/vagrant-aws
+  vendor: https://github.com/mitchellh/vagrant-aws
   primary: git@github.com:destructuring/vagrant-docker
   secondary: git@bitbucket.org:destructuring/vagrant-docker
