@@ -1,4 +1,4 @@
-# Vagrant AWS Provider
+# Vagrant Docker Provider
 
 This is a [Vagrant](http://www.vagrantup.com) 1.1+ plugin that adds an [Docker](http://docker.io)
 provider to Vagrant, allowing Vagrant to control and provision
